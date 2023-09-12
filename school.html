@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Application</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+</head>
+<body>
+    <script>
+        var monthlyActivities = [
+            { id: 1, activity: "Calculate the area and circumference of different shapes", subject: "Maths" },
+            { id: 2, activity: "Write an essay on 'My Favorite Book'", subject: "English" },
+            { id: 3, activity: "Prepare a presentation on 'The Solar System'", subject: "Science" },
+            { id: 4, activity: "Draw and label a plant cell", subject: "Biology" },
+            { id: 5, activity: "Solve quadratic equations", subject: "Maths" },
+            { id: 6, activity: "Conduct an experiment on photosynthesis", subject: "Biology" },
+            { id: 7, activity: "Write a book review", subject: "English" },
+            { id: 8, activity: "Research and present about a science event", subject: "Science" },
+            { id: 9, activity: "Learn more about skeleten", subject: "Biology" },
+            { id: 10, activity: "Conduct a survey and analyze the data", subject: "Maths" }
+        ];
+
+
+        function showResult(subjectName) {
+            var activitiesDiv = document.getElementById('activities');
+            activitiesDiv.innerHTML = '';
+            
+            monthlyActivities.forEach(function(activity) {
+                if(activity.subject == subjectName){
+                    var activityElement = document.createElement('div');
+                    activityElement.className = 'activity-card';
+                    activityElement.innerHTML = `
+                    <h4>Activity ID: ${activity.id}</h4>
+                    <p>Activity: ${activity.activity}</p>
+                    <p>Subject: ${activity.subject}</p>
+                    `;
+                    activitiesDiv.appendChild(activityElement);
+                }
+            });
+        }
+
+        function handleChange(){
+            showResult(event.target.value);
+        }
+
+        $( document ).ready(function() {
+            showResult("Maths");
+        });
+    </script>
+    <header >
+        <img src="https://media.istockphoto.com/id/1311655397/vector/education-and-graduation-logo-design-vector.jpg?s=612x612&w=0&k=20&c=HLS9vxbhMsnjTv8J4Hncg01rPLySV0E-QxvY_H0BHoU=" alt="School Logo">
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <l1>
+                    <a href="./timetable.html">    
+                        Time table  
+                    </a>
+                </l1>
+                <l1>
+                    <a href="./student.html">    
+                        . Student Details
+                    </a>
+                </l1>
+            </ul>
+        </nav>
+    </header>
+    <center style="margin: 5%;">
+        <img src="school.jpg" width="50%"/>
+    </center>
+
+    <br />
+    <br />
+
+    <div style="width: auto;">       
+        <h1>Show Monthly Activity as per Subject</h1>
+        <select onchange="handleChange()">
+            <option>Maths</option>
+            <option>English</option>
+            <option>Science</option>
+            <option>Biology</option>
+        </select>
+        <div id="activities"></div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    
+    <div id="about">
+        <h1>About Our School</h1>
+        <p>Our school, located in the heart of the city, offers a comprehensive curriculum from grades 1 to 12. We believe in holistic education and focus on both academics and extracurricular activities. Our faculty is highly qualified and dedicated to nurturing the potential of each student.</p>
+    </div>
+    
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <div id="contact">
+        <h1>Contact Us</h1>
+        <p>Address: 123 School Street, Mumbai, Maharashtra, India</p>
+        <p>Email: info@ourschool.edu</p>
+        <p>Phone: +91 1234567890</p>
+    </div>
+
+    </body>
+
+</html>
+

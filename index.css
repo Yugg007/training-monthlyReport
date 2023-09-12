@@ -1,0 +1,179 @@
+/* Default styles for larger screens */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2F4F4F;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color : #778899 ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+main {
+    background-color:#F5F5DC ;
+    padding: 20px;
+    height: 550px;
+}
+
+.intro {
+    color: red;
+    justify-content: space-around;
+}
+
+.hideTag {
+    display: none;
+}
+
+header img {
+    height: 50px;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav li {
+    margin: 0 10px;
+    justify-content: center;
+}
+
+header nav a {
+    text-decoration: none;
+    color: black;  
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;                                       
+}
+table, th, td {
+    border: 1px solid black;
+    padding: 15px;
+    text-align: left;
+}
+@media screen and (max-width: 600px) {
+    table, th, td {
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+}
+center {
+    margin: 100px;
+}
+
+.background{ 
+background-color: #96c0c9;
+border: 5px solid #000;
+} 
+
+.timetable {
+color: #b41a1a;
+padding: 10px 20px;
+border:#c92c2c;
+cursor:pointer; 
+border-radius:50px; 
+} 
+
+.image{
+width:100px; 
+height:100px; 
+border-radius:10%; 
+border-color:#000; 
+box-shadow:
+5px 5px 10px rgba(14,145,23,0.5);
+}
+
+
+/* Styles for smaller screens */
+@media (max-width: 600px) {        
+    body{
+    font-size :12pt ;
+    }
+        
+    header nav ul {
+    flex-direction : column ;
+    }
+        
+    table{
+    width :100% ;
+    }
+        
+    .image{
+    width :50% ;
+    height :50% ;
+    }
+}
+
+
+
+
+
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+}
+#activities {
+    margin-top: 20px;
+}
+
+.activity-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.activity-card h2 {
+    margin: 0;
+    color: #333;
+}
+.activity-card p {
+    margin: 5px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+}
+.school-form {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.school-form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.school-form input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}

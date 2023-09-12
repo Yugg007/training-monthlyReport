@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .form-header {
+            text-align: center;
+            color: #4CAF50;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            border: none;
+        }
+    </style>
+
+<script>
+        function register() {
+            event.preventDefault();
+            var inputEmail = document.getElementById('email').value;
+            var inputPassword = document.getElementById('password').value;
+
+            var users = JSON.parse(localStorage.getItem('users')) || [];
+
+            var existingUser = users.find(function(user) {
+                return user.email === inputEmail;
+            });
+
+            if (existingUser) {
+                alert("You are already registered, continue logging in...");
+            } else {
+                users.push({ email: inputEmail, password: inputPassword });
+                localStorage.setItem('users', JSON.stringify(users));
+                window.location.href = "./school.html";
+            }
+        }
+
+        function logIn() {
+            event.preventDefault();
+            var inputEmail = document.getElementById('email').value;
+            var inputPassword = document.getElementById('password').value;
+
+            var users = JSON.parse(localStorage.getItem('users')) || [];
+
+            var existingUser = users.find(function(user) {
+                return user.email === inputEmail && user.password === inputPassword;
+            });
+
+            if (existingUser) {
+                window.location.href = "./school.html";
+            } else {
+                alert("Credentials are wrong!!");
+            }
+        }
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <form>
+        <h2 class="form-header">Welcome to Authentication page</h2>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit" onclick="register()">Register</button>
+        <button type="submit" onclick="logIn()">Login</button>
+    </form>
+    <p>Already have an account? <a href="index.html">Login here</a></p>
+</div>
+
+</body>
+</html>
